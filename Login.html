@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="Login.css">
+</head>
+<body>
+    <h1>Welcome to Login</h1>
+    <form id="form-login" onsubmit="return validateLogin()" action="nextpage.html">
+        <div class="form-control">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+        </div>
+        <div class="form-control">
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+        </div>
+        <div id="form-submit">
+            <input type="submit" value="Login">
+        </div>
+        <div class="text-singup">
+            <h3>Not a member?</h3>
+            <a href="#">Singup</a>
+        </div>
+    </form>
+
+    <script>
+        function validateLogin() {
+            var usernameInput = document.getElementById('username');
+            var passwordInput = document.getElementById('password');
+            var username = usernameInput.value;
+            var password = passwordInput.value;
+
+            // Thay đổi các thông tin username và password ở đây
+            var correctUsername = 'admin';
+            var correctPassword = '6789';
+
+            if (username === correctUsername && password === correctPassword) {
+                return true; // Cho phép chuyển sang trang nextpage.html
+            } else {
+                alert('Sai thông tin username hoặc password!');
+                return false; // Ngăn không cho chuyển trang
+            }
+        }
+    </script>
+    
+
+</body>
+</html>
